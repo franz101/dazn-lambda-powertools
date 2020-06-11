@@ -14,7 +14,7 @@ module.exports = (thresholdMillis = 10,customLogger=undefined) => {
     const awsRequestId = context.awsRequestId
     const invocationEvent = JSON.stringify(event)
     if(typeof customLogger !== 'undefined'){
-      customLogger('invocation timed out', { awsRequestId, invocationEvent })
+      customLogger('invocation timed out', { awsRequestId, invocationEvent,context })
     }
     else{
     Log.error('invocation timed out', { awsRequestId, invocationEvent })      
